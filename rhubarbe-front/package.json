@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:rhubarbe-front": "node dist/rhubarbe-front/server/server.mjs"
+    "deploy": "npx wrangler pages deploy dist/rhubarbe-front/browser --project-name=rhubarbe"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
