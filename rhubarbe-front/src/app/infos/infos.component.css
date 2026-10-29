@@ -1,0 +1,78 @@
+.infos {
+  background: var(--color-brand-bg);
+  padding: var(--section-padding);
+}
+
+/* content-wrapper gère le max-width et le centrage */
+.infos-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.infos-block {
+  margin-bottom: 2rem;
+}
+
+.infos-block h3 {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  margin-bottom: 0.6rem;
+}
+
+/* Horaires */
+.horaires {
+  list-style: none;
+}
+
+.horaires li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--color-brand-light);
+  font-size: 0.9rem;
+}
+
+.heure {
+  color: var(--color-text-muted);
+}
+
+.heure.ferme {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Map */
+.infos-map {
+  height: 450px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.infos-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .infos-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .infos-map {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infos {
+    padding: var(--section-padding-sm);
+  }
+}

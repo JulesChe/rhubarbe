@@ -1,3 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@font-face {
+  font-family: 'Gowak';
+  src: url('/fonts/GOWAK.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Couleurs */
+  --color-brand: #DD216A;
+  --color-brand-light: #f2dde5;
+  --color-brand-bg: #faf7f8;
+  --color-text: #222;
+  --color-text-muted: #555;
+
+  /* Typographies */
+  --font-display: 'Gowak', sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  /* Espacements */
+  --section-padding: 6rem 2rem;
+  --section-padding-sm: 4rem 1rem;
+  --content-max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: #fff;
+}
+
+/* ── Utilitaires globaux ─────────────────────────────────── */
+
+/* Conteneur centré réutilisable sur toutes les pages */
+.content-wrapper {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* Titre de section — une seule source de vérité */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--color-brand);
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+/* Liens courants */
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Reset address */
+address {
+  font-style: normal;
+  line-height: 1.7;
+  color: var(--color-text);
+}

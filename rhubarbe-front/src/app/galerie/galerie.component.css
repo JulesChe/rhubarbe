@@ -1,0 +1,41 @@
+.galerie {
+  padding: var(--section-padding);
+}
+
+.section-title {
+  text-align: center;
+}
+
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+/* Placeholder — à remplacer par <img> avec les vraies photos */
+.galerie-item {
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-brand-light);
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.galerie-item:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .galerie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .galerie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie {
+    padding: var(--section-padding-sm);
+  }
+}
