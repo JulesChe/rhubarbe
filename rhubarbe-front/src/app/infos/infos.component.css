@@ -4,11 +4,19 @@
 }
 
 /* content-wrapper gère le max-width et le centrage */
+/* Mobile-first : colonne unique, grille desktop via min-width */
 .infos-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
   align-items: start;
+}
+
+@media (min-width: 900px) {
+  .infos-grid {
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+  }
 }
 
 .infos-block {
@@ -46,9 +54,9 @@
   font-style: italic;
 }
 
-/* Map */
+/* Map — hauteur réduite sur mobile */
 .infos-map {
-  height: 450px;
+  height: 280px;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -60,19 +68,8 @@
   display: block;
 }
 
-@media (max-width: 900px) {
-  .infos-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
+@media (min-width: 900px) {
   .infos-map {
-    height: 350px;
-  }
-}
-
-@media (max-width: 480px) {
-  .infos {
-    padding: var(--section-padding-sm);
+    height: 450px;
   }
 }

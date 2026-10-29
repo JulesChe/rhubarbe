@@ -8,7 +8,7 @@
 
 .galerie-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 0.75rem;
 }
 
@@ -24,18 +24,14 @@
   opacity: 0.85;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 480px) {
   .galerie-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 768px) {
   .galerie-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .galerie {
-    padding: var(--section-padding-sm);
+    grid-template-columns: repeat(3, 1fr);
   }
 }

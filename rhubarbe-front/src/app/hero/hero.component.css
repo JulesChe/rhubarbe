@@ -11,26 +11,27 @@
   overflow: hidden;
 }
 
-/* Nav */
+/* Nav — mobile-first : centré, compact */
 .hero-nav {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: flex-end;
-  gap: 2.5rem;
-  padding: 2rem 3rem;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1rem;
 }
 
 .hero-nav a {
   color: #fff;
   text-decoration: none;
-  /* hérite de body */
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.85;
+  /* Touch target minimum 44px */
+  padding: 0.75rem 0.25rem;
   transition: opacity 0.2s;
 }
 
@@ -38,6 +39,20 @@
 .hero-nav a:focus-visible {
   opacity: 1;
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .hero-nav {
+    justify-content: flex-end;
+    gap: 2.5rem;
+    padding: 2rem 3rem;
+  }
+
+  .hero-nav a {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    padding: 0;
+  }
 }
 
 /* Content */
@@ -56,8 +71,8 @@
 
 .hero-subtitle {
   /* hérite de body */
-  font-size: clamp(0.8rem, 2vw, 1.1rem);
-  letter-spacing: 0.5em;
+  font-size: clamp(0.7rem, 3.5vw, 1.1rem);
+  letter-spacing: 0.4em;
   text-transform: uppercase;
   margin-top: 0.75rem;
   opacity: 0.8;
@@ -103,11 +118,3 @@
   50% { transform: translateX(-50%) translateY(10px); }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .hero-nav {
-    gap: 1.5rem;
-    padding: 1.5rem;
-    justify-content: center;
-  }
-}
